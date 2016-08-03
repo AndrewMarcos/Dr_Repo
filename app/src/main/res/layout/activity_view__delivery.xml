@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#ffffff"
-    tools:context="pharmacy.morcos.andrew.drpharmacy.View_Delivery">
+    tools:context="com.example.andrewsamir.drromance.View_Delivery">
 <LinearLayout
     android:layout_width="match_parent"
     android:weightSum="5"
@@ -214,7 +214,7 @@ android:orientation="vertical"
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="#ffffff"
-        android:id="@+id/layout"
+        android:id="@+id/layout_view_delivery"
         android:layout_height="match_parent">
 
         <ProgressBar
@@ -224,4 +224,12 @@ android:orientation="vertical"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/see_image"
+        android:visibility="gone"
+        android:background="#fff"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitCenter"
+        android:layout_height="match_parent" />
 </FrameLayout>

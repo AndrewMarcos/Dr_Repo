@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.andrewsamir.drromance.Adapters.Delivery_ADapter;
+import com.example.andrewsamir.drromance.Data.data_delivery;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -14,9 +16,6 @@ import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
-
-import pharmacy.morcos.andrew.drpharmacy.Adapters.Delivery_ADapter;
-import pharmacy.morcos.andrew.drpharmacy.Data.data_delivery;
 
 public class Delevery extends AppCompatActivity {
 
@@ -61,7 +60,7 @@ public class Delevery extends AppCompatActivity {
 
                     i++;
                 }
-               Delivery_ADapter  delivery_aDapter= new Delivery_ADapter(DataArray, Delevery.this);
+               Delivery_ADapter delivery_aDapter= new Delivery_ADapter(DataArray, Delevery.this);
                 list.setAdapter(delivery_aDapter);
                 /*listView_news.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override

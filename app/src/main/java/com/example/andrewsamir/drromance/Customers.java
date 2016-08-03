@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import com.example.andrewsamir.drromance.Adapters.All_Customers_Adapter;
+import com.example.andrewsamir.drromance.Data.All_Customers;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -11,9 +13,6 @@ import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
-
-import pharmacy.morcos.andrew.drpharmacy.Adapters.All_Customers_Adapter;
-import pharmacy.morcos.andrew.drpharmacy.Data.All_Customers;
 
 public class Customers extends AppCompatActivity {
 

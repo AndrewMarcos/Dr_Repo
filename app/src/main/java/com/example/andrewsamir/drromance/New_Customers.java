@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.example.andrewsamir.drromance.Adapters.All_Customers_Adapter;
+import com.example.andrewsamir.drromance.Data.All_Customers;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -16,9 +18,6 @@ import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
-
-import pharmacy.morcos.andrew.drpharmacy.Adapters.All_Customers_Adapter;
-import pharmacy.morcos.andrew.drpharmacy.Data.All_Customers;
 
 /**
  * Created by Andrew Samir on 7/23/2016.

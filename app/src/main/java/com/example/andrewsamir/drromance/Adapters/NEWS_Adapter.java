@@ -11,10 +11,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.andrewsamir.drromance.Data.data_news;
+import com.example.andrewsamir.drromance.R;
+
 import java.util.ArrayList;
 
-import pharmacy.morcos.andrew.drpharmacy.Data.data_news;
-import pharmacy.morcos.andrew.drpharmacy.R;
 
 
 /**

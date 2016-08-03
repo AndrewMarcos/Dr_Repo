@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.andrewsamir.drromance.Data.data_delivery;
+import com.example.andrewsamir.drromance.R;
 
-import pharmacy.morcos.andrew.drpharmacy.Data.data_delivery;
-import pharmacy.morcos.andrew.drpharmacy.R;
+import java.util.ArrayList;
 
 /**
  * Created by Andrew Samir on 6/28/2016.

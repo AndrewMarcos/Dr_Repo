@@ -14,6 +14,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import com.android.volley.RequestQueue;
+import com.example.andrewsamir.drromance.Adapters.NEWS_Adapter;
+import com.example.andrewsamir.drromance.Data.data_news;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -21,9 +23,6 @@ import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
-
-import pharmacy.morcos.andrew.drpharmacy.Adapters.NEWS_Adapter;
-import pharmacy.morcos.andrew.drpharmacy.Data.data_news;
 
 
 public class Set_News extends AppCompatActivity {
