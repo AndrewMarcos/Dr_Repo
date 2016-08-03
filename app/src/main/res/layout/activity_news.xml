@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pharmacy.morcos.andrew.drpharmacy.NEWS">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:weightSum="8">
+
+        <Button
+            android:id="@+id/button_set_image"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="setImage" />
+
+        <EditText
+            android:id="@+id/editText_NEWS"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_below="@+id/button_set_image"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button_send_news"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="send" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:text="cancel" />
+
+        <ImageView
+            android:id="@+id/imageView_NEWS"
+            android:layout_width="wrap_content"
+            android:layout_height="0px"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar_send_news"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+
+</FrameLayout>

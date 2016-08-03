@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16sp"
+    android:weightSum="9"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/button_all_customers"
+        android:text="All Customers"
+        android:layout_weight="1"
+        android:layout_height="0px" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="New Customers:"
+        android:textStyle="italic|bold"
+        android:textSize="15sp"
+        android:layout_weight="0.8"
+        android:gravity="center_vertical"
+        android:layout_height="0px" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_weight="7.2"
+        android:layout_height="0px">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15sp"
+        android:id="@+id/listView_new_customers"
+        android:layout_gravity="center_horizontal" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relative_new_customer"
+            android:background="#fff"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>
