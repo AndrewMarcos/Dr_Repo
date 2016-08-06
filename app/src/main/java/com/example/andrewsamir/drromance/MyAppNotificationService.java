@@ -26,6 +26,7 @@ public class MyAppNotificationService extends IntentService {
     View rootView;
     String deliveryId;
     static Firebase myNotificationFirebase;
+    static Firebase newCustomersFirebase;
 
     public MyAppNotificationService(String name) {
         super("Notification app Service");
@@ -103,6 +104,7 @@ public class MyAppNotificationService extends IntentService {
 
                     }
                 });
+
                 }
 
 
@@ -127,7 +129,59 @@ public class MyAppNotificationService extends IntentService {
             }
         });
 
+        newCustomersFirebase = new Firebase(getString(R.string.MyFirebase_Database)+"New_Customers");
+        newCustomersFirebase.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                NotificationManager mNM;
+                mNM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                // Set the icon, scrolling text and timestamp
+                NotificationCompat.Builder mBuilder =
+                        new NotificationCompat.Builder(getBaseContext())
+                                .setSmallIcon(R.mipmap.ic_launcher)
+                                .setContentTitle("New Customer")
+                                .setContentText("A new Customer is regestered ").setAutoCancel(true);
+                Intent resultIntent = new Intent(getBaseContext(), Delevery.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(getBaseContext());
+                stackBuilder.addParentStack(Delevery.class);
+                // Adds the Intent that starts the Activity to the top of the stack
+                stackBuilder.addNextIntent(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(
+                                0,
+                                PendingIntent.FLAG_UPDATE_CURRENT
+                        );
+                Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                mBuilder.setSound(alarmSound);
+                mBuilder.setContentIntent(resultPendingIntent);
+                int mNotificationId = 001;
+                // Gets an instance of the NotificationManager service
+                NotificationManager mNotifyMgr =
+                        (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                // Builds the notification and issues it.
+                mNotifyMgr.notify(mNotificationId, mBuilder.build());
 
+            }
 
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 }

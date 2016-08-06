@@ -1,7 +1,9 @@
 package com.example.andrewsamir.drromance;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -107,5 +109,38 @@ public class Delevery extends AppCompatActivity {
               startActivity(intent);
           }
       });
+
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                final CharSequence[] items = {
+                        "Remove"
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Delevery.this);
+                builder.setTitle("Choose Action ..");
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int item) {
+
+                        if (items[item].equals("Remove")) {
+
+                            Thread t = new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    postData(i);
+                                }
+                            });
+                            t.start();
+                        }
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+                return true;
+            }
+        });
+    }
+    public void postData(int pos) {
+        myFirebase.child("Delivery").child(DataArray.get(pos).getOreder_id()).removeValue();
     }
 }
