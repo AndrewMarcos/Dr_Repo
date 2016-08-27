@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.firebase.client.Firebase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent mServiceIntent = new Intent(this, MyAppNotificationService.class);
-        startService(mServiceIntent);
+
+
+        System.out.println("Registration.onTokenRefresh TOKEN: " + FirebaseInstanceId.getInstance().getToken() );
+        FirebaseMessaging.getInstance().subscribeToTopic("delivery");
+        FirebaseMessaging.getInstance().subscribeToTopic("newCustomers");
+
         Firebase.setAndroidContext(this);
         myFirebaseRef = new Firebase("https://romance-pharmacy.firebaseio.com/");
 
